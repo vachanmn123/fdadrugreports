@@ -1,5 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import Header from "@/components/Header";
+import Providers from "./providers";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,9 +13,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const isDark = true;
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + `${isDark ? " dark" : ""}`}>
+        <Providers>
+          <Header />
+          <div className="py-20 px-10">{children}</div>
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }
