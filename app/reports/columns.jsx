@@ -12,6 +12,16 @@ export const columns = [
     meta: {
       className: "w-1/5",
       sortable: true,
+      sortKey: "receivedate",
+    },
+  },
+  {
+    accessorFn: (row) => row.serious,
+    header: "Serious Level",
+    meta: {
+      className: "w-1/5",
+      sortable: true,
+      sortKey: "serious",
     },
   },
   {

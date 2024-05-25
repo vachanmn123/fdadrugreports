@@ -83,9 +83,12 @@ export function DataTable({ columns, url, toggleSort, sortStatus }) {
                     {header.column.columnDef.meta?.sortable && (
                       <Button
                         variant="ghost"
-                        onClick={() => toggleSort("receivedate")}
+                        onClick={() =>
+                          toggleSort(header.column.columnDef.meta?.sortKey)
+                        }
                       >
-                        {sortStatus.column === "receivedate" && (
+                        {sortStatus.column ===
+                        header.column.columnDef.meta?.sortKey ? (
                           <span
                             className={`${
                               sortStatus.direction === "asc"
@@ -95,6 +98,8 @@ export function DataTable({ columns, url, toggleSort, sortStatus }) {
                           >
                             &#8593;
                           </span>
+                        ) : (
+                          <span>&#8597;</span>
                         )}
                       </Button>
                     )}
