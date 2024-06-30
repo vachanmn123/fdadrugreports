@@ -9,7 +9,6 @@ export default function Page() {
         <a href="https://vachanmn.tech" className="underline">
           Vachan MN
         </a>{" "}
-        for the test issued by Mr. Jash from Omara
       </p>
     </main>
   );
